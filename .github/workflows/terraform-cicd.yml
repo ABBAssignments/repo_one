@@ -1,7 +1,6 @@
 # .github/workflows/terraform-cicd.yml
 
 name: Terraform CI/CD
-
 on:
   push:
     branches:
