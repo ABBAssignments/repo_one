@@ -9,8 +9,10 @@ terraform {
 
 provider "azurerm" {
   features {}
+
+  # Authentication with Service Principal
   client_id       = var.azure_client_id
   client_secret   = var.azure_client_secret
-  tenant_id       = var.azure_tenant_id
-  subscription_id  = var.azure_subscription_id
+  tenant_id       = "e38a4286-00e8-49b3-9e52-7cb9a949eca7"  # Your Tenant ID
+  subscription_id  = "14096b2e-9649-4f63-be0e-217e7abb5459"  # Your Subscription ID
 }
