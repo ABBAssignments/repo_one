@@ -26,7 +26,11 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-            allow-no-subscriptions: true  # This may help avoid errors if no subscriptions are found
+                allow-no-subscriptions: true  # This helps in scenarios where no subscriptions are available
+                enable-AzPSSession: false      # OIDC does not require this
+                environment: azurecloud        # Correct cloud environment
+                audience: api://AzureADTokenExchange  # Use this for OIDC, but it can often be omitted for simplicity
+
 
       - name: Terraform Init
         run: terraform init
