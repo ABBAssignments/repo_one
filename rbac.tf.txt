@@ -1,0 +1,7 @@
+# rbac.tf
+
+resource "azurerm_role_assignment" "aks_role_assignment" {
+  principal_id               = azurerm_ad_service_principal.aks_sp.id
+  role_definition_name       = "Azure Kubernetes Service Cluster User"
+  scope                      = azurerm_kubernetes_cluster.aks_cluster.id
+}

@@ -1,0 +1,8 @@
+# locals.tf
+
+locals {
+  common_tags = {
+    Environment = "Development"
+    Project     = "AKS Demo"
+  }
+}

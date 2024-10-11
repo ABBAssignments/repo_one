@@ -1,0 +1,6 @@
+# providers.tf
+
+# Specify the provider
+provider "azurerm" {
+  features {}
+}
