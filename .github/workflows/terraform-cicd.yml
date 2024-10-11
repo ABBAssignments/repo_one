@@ -26,10 +26,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-         # auth-type: 'servicePrincipal'
+            allow-no-subscriptions: true  # This may help avoid errors if no subscriptions are found
 
       - name: Terraform Init
         run: terraform init
